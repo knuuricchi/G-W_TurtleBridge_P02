@@ -1,65 +1,69 @@
 # G&W Turtle Bridge
 
-Gra **G&W Turtle Bridge** to komputerowa implementacja klasycznej gry handheld z serii Game & Watch. Gracz wciela się w postać przenoszącą paczki przez most zbudowany z żółwi. Żółwie mogą zanurzać się w wodzie, dlatego konieczna jest precyzja i dobre wyczucie czasu.
+**G&W Turtle Bridge** is a computer implementation of the classic handheld game from the Game & Watch series. The player controls a character carrying packages across a bridge made of turtles. The turtles can dive underwater, requiring precision and good timing.
 
-## Opis rozgrywki
+## Gameplay Description
 
-Gracz porusza się po żółwiach, które tworzą tymczasowy most nad wodą. Celem jest transport paczek z jednej strony na drugą i powrót. W grze pojawiają się także ryby, które mogą być łapane przez żółwie. Maksymalna liczba punktów to 999 – po jej osiągnięciu gra się kończy.
+The player moves across turtles forming a temporary bridge over water. The goal is to transport packages from one side to the other and return. Fish appear in the game and can be caught by turtles. The maximum score is 999 points — reaching this ends the game.
 
-## Funkcjonalności
+## Features
 
-**Sterowanie gracza:**
-- `A` – ruch w lewo
-- `D` – ruch w prawo
-- `S` – rozpoczęcie gry / pauza
+**Player Controls:**
 
-**Mechanika gry:**
-- Poruszanie się po żółwiach, które mogą się zanurzyć
-- Przenoszenie paczek i ich dostarczanie
-- Pojawiające się ryby, które mogą być łapane przez żółwie
+- A – move left  
+- D – move right  
+- S – start/pause the game  
 
-**Wyświetlanie wyniku:**
-- Punktacja prezentowana w stylu siedmiosegmentowym (klasa `SevenSegmentDigit`)
+**Game Mechanics:**
 
-**Obsługa zdarzeń:**
-- Mechanizm listenerów do obsługi zmian stanu gry i wyniku
+- Moving across turtles that can dive  
+- Carrying and delivering packages  
+- Fish appearing that turtles can catch  
 
-## Struktura projektu
+**Score Display:**
+
+- Score shown in seven-segment style (using the `SevenSegmentDigit` class)  
+
+**Event Handling:**
+
+- Listener mechanism to handle game state and score updates  
+
+## Project Structure
 
 src/
-├── Main.java // Główny punkt wejścia do aplikacji
+├── Main.java // Main application entry point
 └── p02/
 ├── game/
-│ └── Board.java // Logika gry: plansza, gracz, zdarzenia
+│ └── Board.java // Game logic: board, player, events
 └── pres/
-├── GameFrame.java // Okno aplikacji z interfejsem graficznym
-├── JBoard.java // Panel odpowiedzialny za rysowanie gry
-└── SevenSegmentDigit.java // Klasa rysująca cyfry w stylu seven-segment
+├── GameFrame.java // Application window with GUI
+├── JBoard.java // Panel responsible for rendering the game
+└── SevenSegmentDigit.java // Class for drawing seven-segment style digits
 
 
-## Wymagania
+## Requirements
 
-- Java 11 lub nowsza
-- Wbudowane biblioteki Java (`javax.swing`, `java.awt`)
+- Java 11 or newer  
+- Built-in Java libraries (`javax.swing`, `java.awt`)  
 
-## Uruchomienie
+## How to Run
 
-1. Sklonuj repozytorium:
+1. Clone the repository:  
    ```bash
    git clone https://github.com/knuuricchi/G-W_TurtleBridge_P02.git
 
-    Otwórz projekt w IntelliJ IDEA lub innym IDE wspierającym Javę.
+    Open the project in IntelliJ IDEA or another Java-supporting IDE.
 
-    Uruchom plik Main.java.
+    Run the Main.java file.
 
-Zasady gry
+Game Rules
 
-    Gracz startuje po lewej stronie planszy.
+    The player starts on the left side of the board.
 
-    Po dotarciu na prawą stronę odbiera paczkę.
+    Upon reaching the right side, the player picks up a package.
 
-    Po powrocie na lewą stronę paczka zostaje dostarczona.
+    Returning to the left side delivers the package.
 
-    Trzeba uważać na zanurzające się żółwie – wpadnięcie do wody powoduje stratę.
+    Watch out for turtles diving underwater — falling into water causes a loss.
 
-    Gra kończy się po zdobyciu 999 punktów.
+    The game ends after reaching 999 points.
